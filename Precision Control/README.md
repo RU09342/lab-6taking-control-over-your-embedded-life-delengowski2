@@ -14,3 +14,26 @@ Obviously you are going to be making this type of circuitry to drive something. 
 Along with what was asked in each of the parts above, for each implementation, you need to generate at least one triangle wave from your microntroller. This can be done by simply incrementing and decrementing values that are being sent to your circuit. You need to measure the output of each one of these along with taking the FFT on the scope of each one. The span on the FFT will need to go from 1kHz to about 50kHz if possible. You then need to compare the integrity of each signal by analyzing the difference in frequency components.
 
 The README for this part is going to be mainly about the results of your measurement along with information on the implementation. You need to also talk about how you generated the triangle wave, but do not give me a dissertation on it. Since this is going to be talking about hardware, you need to place in the README a Bill Of Materials listing all hardware used as well as link to a Digikey cart which contains the parts needed in the right quantity. You do not need to include things like your F5529 or the breadboard or wires.
+
+# R2R DAC
+![ALT TEXT](https://i.imgur.com/TQZgnZl.png)
+After configuration of the R2R DAC the first 8 pins of port 3 on the MSP430FR5529 were connected respectively. To generate the triangle required the simulation of a bidirectional binary counter. This was done using polling and two nested while loops. Since the DAC is 8 bits, the incrementor variable counted up to 2^8 - 1 = 255 to create the positive slope of the triangle wave and then down to zero to create the negative slope of the triangle wave. 
+
+```
+    while(1){
+        while(i<255){
+            P3OUT++;
+            i++;
+            __delay_cycles(1000);
+        }
+        while(i>0){
+            P3OUT--;
+            i--;
+            __delay_cycles(1000);
+        }
+    }
+```
+The triangle wave output along with its Fast Fourier Transform 
+![ALT TEXT](https://i.imgur.com/SIra8kh.png)
+A gif of this all in real time
+![ALT TEXT](https://i.imgur.com/214o6Yq.gif)
