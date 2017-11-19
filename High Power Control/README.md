@@ -14,3 +14,9 @@ The MOSFET switch is a very simple circuit which can be used in a multitude of a
 
 ## Deliverables
 Along with what was asked in each part, you will need to utilize the DMM to determine what the current draw from each switch is and if that falls into spec with the Microcontroller. You need to then come up with the best configuration you can think of using to control something that requires large current, but also protects your processor from damage. The reason I am asking you to do this with just the G2553 is: A) The code is just generating a square wave, and B) this part of the lab runs the highest chance of damaging your parts and we have spare G2553's just in case.
+
+Relay/FET (5ma/4ma)
+
+## MOSFET Switch
+
+The decided load was a 750 ohm power resistor whose current was controlled using a 2N7000 NMOS biased to act as a switch. 
