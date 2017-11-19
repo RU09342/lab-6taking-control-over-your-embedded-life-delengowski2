@@ -36,4 +36,5 @@ After configuration of the R2R DAC the first 8 pins of port 3 on the MSP430FR552
 The triangle wave output along with its Fast Fourier Transform 
 ![ALT TEXT](https://i.imgur.com/SIra8kh.png)
 A gif of this all in real time
+
 ![ALT TEXT](https://i.imgur.com/214o6Yq.gif)
