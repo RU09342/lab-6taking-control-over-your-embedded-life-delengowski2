@@ -18,7 +18,7 @@ Along with what was asked in each part, you will need to utilize the DMM to dete
 # MOSFET SWITCH
 
 The decided load was a 750-ohm power resistor. To control the current through the power resistor, the resistor was connected to the source of a 2N7000 N channel MOSFET, and pin 1.0 (LED) of the GPIO on the MSP430G2553 was connected to the gate, the drain had 12v supplied to it. The code used was a simple blink where the the blink was controlled by a timer on the G2. The current through the power resistor was measured to be 5mA. Below is an image of the circuit. 
-![alt text](https://i.imgur.com/Qt8e93B.png)
+![alt text](https://i.imgur.com/pyymNN6.png?1)
 
 # RELAY SWITCH
 Again the decided load was a 750-ohm power resistor. To control the current through the resistor a electro-mechanical relay was used however, the relay requires 12 volts to run. Therefore to control the relay with the G2 required to control a NMOS with the G2 and have the NMOS control the relay. The same code for the MOSFET switch was used for the relay switch. Below is an image of the circuit, and ossciloscope readings. The highest frequency that was usable for relay was 725 hz. 
