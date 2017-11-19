@@ -23,6 +23,6 @@ The decided load was a 750-ohm power resistor. To control the current through th
 # RELAY SWITCH
 Again the decided load was a 750-ohm power resistor. To control the current through the resistor a electro-mechanical relay was used however, the relay requires 12 volts to run. Therefore to control the relay with the G2 required to control a NMOS with the G2 and have the NMOS control the relay. The same code for the MOSFET switch was used for the relay switch. Below is an image of the circuit, and ossciloscope readings. The highest frequency that was usable for relay was 725 hz. 
 
-![alt text](https://i.imgur.com/5F8q3LU.png)
+![alt text](https://i.imgur.com/5F8q3LU.png?1)
 ![alt text](https://i.imgur.com/MfQhnaV.png)
 ![alt text](https://i.imgur.com/i5KQe6b.png)
