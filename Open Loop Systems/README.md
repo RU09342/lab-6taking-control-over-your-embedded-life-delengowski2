@@ -1,21 +1,28 @@
 # Lab 6: Open Loop Systems
-Believe it or not, up to this point, any time that you have wanted to control your LED color or brightness so far, you have been attempting to control an Open Loop System. Basically, when in your code you state that you want a certain brightness or even a duty cycle, you are going on blind faith that the output is actually what it is supposed to be. If something seemed off, you probably went back into the code and tweaked some values. In the case of actual Systems and Control Theory, you are the feedback loop, providing some corrective signal to the system to help obtain a closer output, and we will deal with this in the Milestone. For now, we need to focus on system modeling getting a system to a desirable state. For this lab, you will be attempting to keep a voltage regulator within a specific temperature range using a DC fan which you will have control over. For this part to be a success, you need to figure out what is the minimum fan speed you need to cool off the regulator so that is stays operational.
+In this portion of Lab 6, we explore and implement an open loop system meant to cool a voltage regulator via a fan. In short, there will be a temperature reading that we must feedback into the system to alter the PWM of a fan to adjust or maintain a temperature.
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/General_Feedback_Loop.svg/220px-General_Feedback_Loop.svg.png" alt="Feedback Loop">
+
+Above is a basic form of a feedback loop. Our function, shown as the P in the picture, is cooling a voltage regulator, and the feedback is a temperature reading that will alter the next output. The initial input is a desired temperature to be reached.
 
 ## Voltage Regulator
-You will need to take a 5V regulator from the back of the lab and drop the output across a 100 ohm power resistor (1 watt should do the trick). The input to the voltage regulator will be between 15-20V. I am giving you a range because when it is dropping a ton of voltage, it may not be able to cool it off enough with just a fan. Most of the voltage regulators in the back will have a tab on the top which we can place a thermistor to. If provided, you can use that tab, or place a through-hole thermistor making contact to the component on your board.
+The voltage regulator is the element of the system that will constantly be producing heat. Our setup used a 22ohm 1W power resistor at the output of the voltage regulator and 15.5V input. The voltage regulator used was the LM7805CV3.
+(((circuit diagram of voltage regulator needed)))
 
 ## Fan Control
-It will be up to you, the engineer, to decide which method you want to use to control the DC fan. Most of these fans run off of 5V, and as such can not directly be driven by your microcontroller. Depending on the type of fan you use, some can take in a PWM control signal, others will need to have the voltage be modified. Since we are not providing you with any mechanical mounts, you are free to place the fan in whatever orientation you wish, so long as it is safe to operate.
+Our fan is a 12V DC fan pulled from a computer power supply. The fan is supplied with 15.5V DC and a simple mosfet circuit was designed to allow the low voltage of our MSP430's logic (3.3V) to switch the 15.5V supplied to the fan. By doing this, we are able to send PWM signal from the MSP430 to the gate of our mosfet to effectively make our 2 wire DC fan into a PWM driven device.
+(((mosfet circuit diagram needed)))
 
 ## Temperature Reading
-It would be really useful to see what the temperature of your system is so you can determine the performance of your system. This can be done either by displaying the current temperature over a display, passing the information over UART, or other ways as well. Remember that UART is Asynchronous, meaning that you can send information whenever you would like from your controller back to a PC, it doesn't have to be reactionary. If you used MATLAB in Lab 5, you could even plot the temperature over time which could be extremely useful in figuring out whether your system is actually doing something. 
+To read temperature, we used the LM35DT sensor. This package of the LM35 was preferred for its ability to be pressed flush against the plate of the voltage regulator to achieve more accurate and consistent temperature readings. A Binder clip was used to ensure they were always pressed together with the same force, as well as acting as a passive heatsink. The input of the LM35 was 15.5V, and the output was connected to an ADC pin on the MSP430 board.
+(((circuit for LM35 interfacing with V_regulator needed)))
 
 
 ## System Modeling
-For starters, you need to figure out with your fan at MAX what the temperature that the voltage regulator reaches. Your thermistors/PTATs/Whatever else you want to use to measure temperature may not be calibrated, so your results may be consistently off with reality, but for now that is ok. After figuring this out, in increments of about 5C, see what fan speed you need to have to maintain that temperature. Do this until your regulator gets down to about 30C-40C, keeping a record of what your applied Duty Cycles or voltages were. Then using this information, attempt to find a transfer function between the applied input and the resulting temperature to model the system behavior. A simple way to do this is in MATLAB or Excel to plot your applied input on the x-axis, and your steady state temperature on your y-axis and attempt a line fit.
+To model our system, we manually stepped up the fan's PWM by 10% from 0-100% and recorded the LM35's reading at each step. We then graphed PWM vs Temperature. We noticed the graph was logarithmic and needed to fit a line to it that could be translated to equations for the MSP430 to use as a model. To achieve this we split the line into 3 segments giving them each their own slope. We then implemented these 3 different lines as equations in our code. This would take a temperature reading and choose PWM based on our model.
+(((code needed for the equations, chart/graph needed)))
 
 ## Open Loop Control System
-You then need to use this information to make a final open loop control system where a user can state what temperature they want the regulator to be maintained at, and the microcontroller will basically calculate/look up what it needs to set the fan to. Do not over complicate this and make it some elaborate system. All this needs to do is some math and set a duty cycle or voltage, and display in some capacity the current temperature of the system as you are measuring it.
+Now that we have equations in our code that fit the model, we add code to allow a desired temperature to be sent through UART. The system then uses the equations to try and match our desired temperature.
 
 
 ## Deliverables
