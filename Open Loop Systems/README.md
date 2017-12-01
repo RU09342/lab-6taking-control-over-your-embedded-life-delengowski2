@@ -3,7 +3,7 @@ In this portion of Lab 6, we explore and implement an open loop system meant to 
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/General_Feedback_Loop.svg/220px-General_Feedback_Loop.svg.png" alt="Feedback Loop">
 
-Above is a basic form of a feedback loop. Our function, shown as the P in the picture, is cooling a voltage regulator, and the feedback is a temperature reading that will alter the next output. The initial input is a desired temperature to be reached.
+Above is a basic form of a feedback loop. Our function, shown as the P in the picture, is cooling a voltage regulator with a fan, and the feedback is a temperature reading that will alter the next output. The initial input is a desired temperature to be reached.
 
 ## Voltage Regulator
 The voltage regulator is the element of the system that will constantly be producing heat. Our setup used a 22ohm 1W power resistor at the output of the voltage regulator and 15.5V input. The voltage regulator used was the LM7805CV3.
