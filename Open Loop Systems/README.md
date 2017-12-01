@@ -74,11 +74,3 @@ The second output is UART transmit to a terminal like realterm that displays the
 ## Notes
 This method is crude and is extremely susceptible to being broken by outside factors (think ambient room temperature changes, fan positioning). On the same day that we created our model, we also tested our system to see how it would respond, and our temperatures were within 5 degrees of the desired value. We tested it the next day at a different bench and not precisely the same fan positioning, and our model was practically useless. It got us within 15 degrees. This is why a closed loop system is needed. The model is not completely useless, it brings the PWM within the ball park of the target and that is an important part of the closed loop system.
 
-## Deliverables
-Your README needs to contain 
-1. schematics of your system 
-2. the plot of the plot of the temperature and input voltages at the 5C steps
-3. brief talk about why you chose the processor you did along with the control technique for the fan. 
-4. As always, you should include a brief description of the code you generated to run the experiment. 
-5. You need to also include information on how to use your control software, including what inputs it is expecting and what range of values you are expecting. 
-
