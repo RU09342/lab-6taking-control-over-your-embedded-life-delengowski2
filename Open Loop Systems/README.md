@@ -1,5 +1,6 @@
 # Lab 6: Open Loop Systems
 In this portion of Lab 6, we explore and implement an open loop system meant to cool a voltage regulator via a fan. In short, there will be a temperature reading that we must feedback into the system to alter the PWM of a fan to adjust or maintain a temperature.
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/General_Feedback_Loop.svg/220px-General_Feedback_Loop.svg.png" alt="Feedback Loop">
 
 Above is a basic form of a feedback loop. Our function, shown as the P in the picture, is cooling a voltage regulator, and the feedback is a temperature reading that will alter the next output. The initial input is a desired temperature to be reached.
