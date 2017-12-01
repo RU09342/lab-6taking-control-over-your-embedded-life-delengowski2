@@ -31,6 +31,8 @@ The above table is the data collected for temperature at steady state vs. PWM.
 
 
 Above is the plot we used to generate equations for the model.
+<img src="https://cdn.discordapp.com/attachments/355174850932899840/386283713018855424/unknown.png" alt="Open Loop vs Closed or Feedback Loop">
+
 
 Above are the fit line equations we got from our data.
 ```c
