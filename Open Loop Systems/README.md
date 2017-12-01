@@ -5,6 +5,8 @@ In this portion of Lab 6, we explore and implement an open loop system meant to 
 
 Above is a basic form of a feedback loop. Our function, shown as the P in the picture, is cooling a voltage regulator with a fan, and the feedback is a temperature reading that will alter the next output. The initial input is a desired temperature to be reached.
 
+Before we get into the nitty-gritty, the processor we chose to use for all parts of the lab was the G2553. Our defense for using this processor is that it is easily replaceable should something burn the processor out. This is a concern here since we are dealing with currents and voltages that are much higher than any of the MSP430s can handle; accidentally exposing a pin to high voltage could kill the whole processor.
+
 ## Voltage Regulator
 The voltage regulator is the element of the system that will constantly be producing heat. Our setup used a 22ohm 1W power resistor at the output of the voltage regulator and 15.5V input. The voltage regulator used was the LM7805CV3.
 (((circuit diagram of voltage regulator needed)))
@@ -27,9 +29,10 @@ Now that we have equations in our code that fit the model, we add code to allow 
 
 
 ## Deliverables
-Your README needs to contain schematics of your system, the plot of the plot of the temperature and input voltages at the 5C steps, and a brief talk about why you chose the processor you did along with the control technique for the fan. As always, you should include a brief description of the code you generated to run the experiment. You need to also include information on how to use your control software, including what inputs it is expecting and what range of values you are expecting. At this time you are not going to need to user-proof the system, but you will for the milestone, so keep it in the back of your head.
+Your README needs to contain 
+1. schematics of your system 
+2. the plot of the plot of the temperature and input voltages at the 5C steps
+3. brief talk about why you chose the processor you did along with the control technique for the fan. 
+4. As always, you should include a brief description of the code you generated to run the experiment. 
+5. You need to also include information on how to use your control software, including what inputs it is expecting and what range of values you are expecting. 
 
-### What your README and code doesn't need
-For starters, note the fact I ask you to do this with only one board. You also do not need to give me all of your code in the README, just tell me functionally what is going on along with showing off any functions you may have made.
-
-Your code *DOES NOT* need to perform any sort of closed loop control. Save that for the milestone. This means that your system does not need to try to actively change the fan speed without your help. You are going to essentially make your microcontroller one big Convert-o-Box to turn a desired temperature into a controllable signal, and then be able to read a temperature.
