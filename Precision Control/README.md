@@ -31,8 +31,6 @@ A gif of this all in real time
 
 (1) 430 pF Capacitor 
 
-
-
 #PWM2
 
 A 50% PWM signal was generated using the Lab 3 PWM code. The output of the PWM was connected to the input of a integrating amplifier (active low pass filter). The output voltage was reported to be 4.44 volts dc on both an oscilloscope and DMM. 
