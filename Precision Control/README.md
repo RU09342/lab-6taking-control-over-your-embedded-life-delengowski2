@@ -22,7 +22,7 @@ A gif of this all in real time
 
 ![ALT TEXT](https://i.imgur.com/214o6Yq.gif)
 
-##BOM
+##Bill of Material
 9 - 2k ohm resistors
 7 - 1k ohm resistors
 
