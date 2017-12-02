@@ -1,5 +1,5 @@
 # Lab 6: Taking Control Over your Embedded Life
-Now that your processor has taken its first glimpse at the world around, it is now time to teach it how interact with other things. Up to this point all you have taught your processor to do is count and turn something on or off. But in this world, only a small amount of things work like a switch. Most things require some form of resolution between them instead of gross movement. It is your task in your lab to teach your processor fine motor skills and precisely control something in the real world. 
+Now that your processor has taken its first glimpse at the world around it is now time to teach it how interact with other things. Up to this point all you have taught your processor to do is count and turn something on or off. But in this world, only a small amount of things work like a switch. Most things require some form of resolution between them instead of gross movement. It is your task in your lab to teach your processor fine motor skills and precisely control something in the real world. 
 
 ## Goals for the lab:
 By the end of this lab, you should:
