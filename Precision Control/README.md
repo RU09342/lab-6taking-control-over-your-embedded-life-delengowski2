@@ -22,6 +22,13 @@ A gif of this all in real time
 
 ![ALT TEXT](https://i.imgur.com/214o6Yq.gif)
 
+# PWM2
+
+A 50% PWM signal was generated using the Lab 3 PWM code. The output of the PWM was connected to the input of a integrating amplifier (active low pass filter). The output voltage was reported to be 4.44 volts dc on both an oscilloscope and DMM. 
+
+![ALT_TEXT](https://i.imgur.com/HwcaOyC.png)
+![ALT TEXT](https://i.imgur.com/gLxYodx.gif)
+
 # Bill of Material
 (9) 2k ohm resistors (found in tech office)
 
@@ -31,9 +38,4 @@ A gif of this all in real time
 
 (1) 430 pF Capacitor 
 
-##PWM2
 
-A 50% PWM signal was generated using the Lab 3 PWM code. The output of the PWM was connected to the input of a integrating amplifier (active low pass filter). The output voltage was reported to be 4.44 volts dc on both an oscilloscope and DMM. 
-
-![ALT_TEXT](https://i.imgur.com/HwcaOyC.png)
-![ALT TEXT](https://i.imgur.com/gLxYodx.gif)
