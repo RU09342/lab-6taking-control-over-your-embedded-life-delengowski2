@@ -23,8 +23,8 @@ A gif of this all in real time
 ![ALT TEXT](https://i.imgur.com/214o6Yq.gif)
 
 # Bill of Material
-9 - 2k ohm resistors
-7 - 1k ohm resistors
+9 - 2k ohm resistors (found in tech office)
+7 - 1k ohm resistors (found in tech office)
 
 ## Loading Effect/PWM2
 Done and implemented in other sections of the lab. 
