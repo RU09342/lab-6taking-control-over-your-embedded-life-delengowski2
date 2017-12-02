@@ -24,6 +24,7 @@ A gif of this all in real time
 
 # Bill of Material
 9 - 2k ohm resistors (found in tech office)
+
 7 - 1k ohm resistors (found in tech office)
 
 ## Loading Effect/PWM2
